@@ -11,8 +11,9 @@ application {
     mainClass.set("com.example.ApplicationKt")
 }
 
-kotlin {
-    jvmToolchain(17)
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
 }
 
 // Nixpacks corre "build" — esto hace que build incluya shadowJar
