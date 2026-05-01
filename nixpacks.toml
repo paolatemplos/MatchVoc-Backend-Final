@@ -5,7 +5,7 @@ JDK_VERSION = "21"
 nixPkgs = ["jdk21"]
 
 [phases.build]
-cmds = ["chmod +x gradlew", "./gradlew shadowJar --no-daemon -x test"]
+cmds = ["chmod +x gradlew", "./gradlew build -x test"]
 
 [start]
-cmd = "java -jar build/libs/*-all.jar"
+cmd = "java -jar build/libs/*.jar"
