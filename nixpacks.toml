@@ -1,11 +1,10 @@
-[variables]
-JDK_VERSION = "21"
-
 [phases.setup]
-nixPkgs = ["jdk21"]
+nixPkgs = ["..."] # Esto lo llena Railway
+aptPkgs = ["..."]
+
+[variables]
+    NIXPACKS_JDK_VERSION = "17"
+    JAVA_VERSION = "17"
 
 [phases.build]
-cmds = ["chmod +x gradlew", "./gradlew build -x test"]
-
-[start]
-cmd = "java -jar build/libs/*.jar"
+    cmds = ["chmod +x gradlew", "./gradlew clean build -x check -x test -Pproduction"]
