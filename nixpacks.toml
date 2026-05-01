@@ -2,6 +2,10 @@
 JDK_VERSION = "21"
 
 [phases.setup]
-nixPkgs = ["...", "jdk21"]
+nixPkgs = ["jdk21"]
 
-# Forzando despliegue MatchVoc v2
+[phases.build]
+cmds = ["chmod +x gradlew", "./gradlew shadowJar --no-daemon -x test"]
+
+[start]
+cmd = "java -jar build/libs/*-all.jar"
