@@ -1,0 +1,7 @@
+[variables]
+JDK_VERSION = "21"
+
+[phases.setup]
+nixPkgs = ["...", "jdk21"]
+
+# Forzando despliegue MatchVoc v2
